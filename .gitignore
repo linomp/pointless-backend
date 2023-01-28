@@ -10,3 +10,4 @@ share
 **/.pytest_cache/
 
 *.pem
+*.env

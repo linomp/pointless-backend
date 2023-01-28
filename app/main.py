@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 
-from app.controllers import healthcheck
+from app.routers import healthcheck, experiments
 from fastapi.responses import RedirectResponse
 
 app = FastAPI(title="pointless-backend", description="Backend for my Pointless personal site")
 
 app.include_router(healthcheck.router)
+app.include_router(experiments.router)
 
 
 @app.get("/", tags=["healthcheck"])
